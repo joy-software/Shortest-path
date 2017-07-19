@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorDonne" blendMode="SRC_ATOP" prefHeight="336.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vue.AlgoRechercheController">
+   <children>
+      <ToolBar layoutX="14.0" layoutY="6.0" prefHeight="35.0" prefWidth="425.0">
+         <items>
+            <HBox spacing="50.0">
+               <children>
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" text="1.">
+                     <font>
+                        <Font name="Berlin Sans FB" size="13.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="donnees_combo" editable="true" onMouseClicked="#fillCombo" prefHeight="25.0" prefWidth="184.0" promptText="selectionner le point initial" />
+                  <Button fx:id="donnees_validation" layoutX="265.0" layoutY="29.0" mnemonicParsing="false" onAction="#donnees_activeDonnees" text="Valider" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </items>
+      </ToolBar>
+      <AnchorPane fx:id="donnees_anchor" disable="true" layoutX="14.0" layoutY="70.0" prefHeight="248.0" prefWidth="425.0">
+         <children>
+            <HBox spacing="50.0">
+               <children>
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" text="2.">
+                     <font>
+                        <Font name="Berlin Sans FB" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="125.0" layoutY="17.0" prefHeight="24.0" prefWidth="336.0" text="Selectionner un point puis entrer son heuristique">
+                     <font>
+                        <Font name="Calibri" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="6.0" layoutY="43.0" prefHeight="25.0" prefWidth="414.0" spacing="30.0">
+               <children>
+                  <ChoiceBox fx:id="donnees_choiceBox" layoutX="63.0" layoutY="43.0" prefHeight="25.0" prefWidth="148.0" />
+                  <TextField fx:id="donnees_text" alignment="CENTER" layoutX="145.0" layoutY="43.0" onMouseClicked="#donnees_getMnemonic" promptText="Entrer l'heuristique" />
+                  <Button fx:id="donnees_button" layoutX="323.0" layoutY="43.0" mnemonicParsing="false" onAction="#donnee_addvalue" text="OK">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="donnees_table" editable="true" layoutX="7.0" layoutY="76.0" prefHeight="164.0" prefWidth="391.0">
+              <columns>
+                <TableColumn fx:id="donnees_colpoint" prefWidth="193.0" text="Point" />
+                <TableColumn fx:id="donnees_colheuristique" prefWidth="106.0" text="Heuristique" />
+                  <TableColumn fx:id="donnees_colfinale" prefWidth="90.0" resizable="false" text="Point Final" />
+              </columns>
+            </TableView>
+         </children>
+         <effect>
+            <InnerShadow color="#8f9ab2" />
+         </effect>
+      </AnchorPane>
+      <Label fx:id="donnees_label" layoutX="78.0" layoutY="48.0" prefHeight="17.0" prefWidth="329.0" text="Le point initial choisi est  : ">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

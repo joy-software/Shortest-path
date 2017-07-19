@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorBienvenue" prefHeight="336.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vue.AlgoRechercheController">
+   <children>
+      <Label fx:id="photo" alignment="CENTER" contentDisplay="CENTER" layoutX="113.0" layoutY="67.0" prefHeight="184.0" prefWidth="251.0" text="Faites glisser votre souris à l'interieur" textAlignment="CENTER" />
+      <AnchorPane layoutX="38.0" layoutY="259.0" prefHeight="27.0" prefWidth="401.0">
+         <children>
+            <Label fx:id="bienvenue_chargement" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" prefHeight="27.0" prefWidth="177.0" text="En attente du fichier  ..." textAlignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="bienvenue_button" layoutY="1.0" mnemonicParsing="false" onAction="#loadFile" onMouseClicked="#loadFile" text="Charger le fichier" />
+            <ProgressIndicator fx:id="bienvenue_progress" layoutX="328.0" layoutY="1.0" prefHeight="53.0" prefWidth="44.0" progress="0.0" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="28.0" prefHeight="38.0" prefWidth="386.0" text="Bienvenue dans notre Algo Research." textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

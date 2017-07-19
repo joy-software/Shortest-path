@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vue.AlgoRechercheController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#restart" text="Restart " />
+                        <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#aboutUs" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <SplitPane fx:id="split" dividerPositions="0.5" prefHeight="500.0" prefWidth="200.0">
+               <items>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="CENTER" layoutY="60.0" prefHeight="198.0" prefWidth="183.0" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                           <children>
+                              <ToolBar fx:id="bienvenue" onMouseClicked="#showBienvenue">
+                                 <items>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Bienvenue" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                              <ToolBar fx:id="donnees" onMouseClicked="#showDonnees" visible="false" GridPane.rowIndex="1">
+                                 <items>
+                                    <Label alignment="CENTER" text="Collecte des données" textAlignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                              <ToolBar fx:id="algorithme" onMouseClicked="#showAlgorithme" visible="false" GridPane.rowIndex="2">
+                                 <items>
+                                    <Label alignment="CENTER" text="Choix de l'algorithme" textAlignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                              <ToolBar fx:id="resultat" onMouseClicked="#showResultat" visible="false" GridPane.rowIndex="3">
+                                 <items>
+                                    <Label alignment="CENTER" text="Resultat" textAlignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchorBienvenue" prefHeight="336.0" prefWidth="466.0">
+                     <children>
+                        <Label fx:id="photo" alignment="CENTER" contentDisplay="CENTER" layoutX="113.0" layoutY="67.0" prefHeight="184.0" prefWidth="251.0" text="Faites glisser votre souris à l'interieur" textAlignment="CENTER" />
+                        <AnchorPane layoutX="38.0" layoutY="260.0" prefHeight="27.0" prefWidth="401.0">
+                           <children>
+                              <Label fx:id="bienvenue_chargement" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" prefHeight="27.0" prefWidth="177.0" text="En attente du fichier  ..." textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="bienvenue_button" layoutY="1.0" mnemonicParsing="false" onAction="#loadFile" onMouseClicked="#loadFile" text="Charger le fichier" />
+                              <ProgressIndicator fx:id="bienvenue_progress" layoutX="328.0" layoutY="1.0" prefHeight="53.0" prefWidth="44.0" progress="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="28.0" prefHeight="38.0" prefWidth="386.0" text="Bienvenue dans notre Algo Research." textAlignment="CENTER">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="precedent" disable="true" layoutX="181.0" layoutY="2.0" mnemonicParsing="false" onAction="#showPreviousPages" text="Precedent" />
+                  <Label fx:id="pagelab" alignment="CENTER" layoutX="263.0" layoutY="6.0" prefHeight="17.0" prefWidth="255.0" text="Bienvenue dans notre Algo Research" textAlignment="CENTER" />
+                  <Button fx:id="suivant" layoutX="518.0" layoutY="2.0" mnemonicParsing="false" onAction="#shownextPages" text="Suivant" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
